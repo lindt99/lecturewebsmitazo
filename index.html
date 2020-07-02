@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MitaZo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fixmenu_pagetop.css">
+  <script type="text/javascript" src="js/openclose.js"></script>
+  <script type="text/javascript" src="js/fixmenu_pagetop.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    $(function(){
+$('a[href^="#"]').click(function() {
+var speed = 800;
+var href= $(this).attr("href");
+var target = $(href == "#" || href == "" ? 'html' : href);
+var position = target.offset().top;
+$('body,html').animate({scrollTop:position}, speed, 'swing');
+return false;
+});
+});
+</script>
+
+
+
+
+
+
+</head>
+
+<body>
+  <h1 id="title">MitaZo</h1>
+  <div id="container">
+
+    <div id="mainimg">メインイメージ</div>
+
+    <header>
+
+      <h1 id="logo"><a href="#add"><img src="images/logo.png" alt="Sample Site"></a></h1>
+      <!--PC用（801px以上端末）メニュー-->
+      <nav id="menubar">
+        <ul>
+          <li id="menu1"><a href="#about"><img src="images/menu_about.png" alt="当サイトについて"></a></li>
+          <li id="menu2"><a href="#search"><img src="images/menu_gallery.png" alt="ギャラリー"></a></li>
+          <li id="menu3"><img src="images/bg1.jpg" alt="リンク"></li>
+          <li id="menu4"><img src="images/menu_instagram.png" alt="インスタグラム"></li>
+        </ul>
+      </nav>
+
+    </header>
+
+
+    <!--/contents-->
+
+    <div class="contents bg2" id="about">
+      <!--contentsブロック開始＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝-->
+
+      <section>
+
+        <h2>About<span>Mitazoについて</span></h2>
+
+        <h3>当サイトは自分が視聴した映画を記録するサイトです</h3>
+        <p>ユーザーが見た映画の名前、公開年、視聴した年月日、レーティングを入力して記録します</p>
+
+      </section>
+
+    </div>
+
+    <div class="contents bg3" id="search">
+      <!--contentsブロック開始＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝-->
+
+      <section>
+
+        <h2>Search</h2>
+
+        <h3>自分のハンドルネームを入力してデータを見ましょう</h3>
+        <form action="search" method="POST" id="form1">
+          <input type="text" name="handlename" placeholder="名前" id="input_message" style="font-size: 25px;">
+          <input type="submit" class="button" id="show" value="表示" style="font-size: 25px;">
+        </form>
+      </section>
+
+    </div>
+    <!--/contents-->
+
+    <div class="contents bg4" id="add">
+      <!--contentsブロック開始＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝-->
+      <section>
+
+        <h2>Add Movie</h2>
+
+        <h3>見た映画を登録しましょう</h3>
+        <form action="add" method="POST" id="form1">
+          <input type="text" id="HN" value="" placeholder="名前" name="addname" style="font-size: 20px; margin-right: 15px;"><br>
+          <input type="text" id="moviename" value="" placeholder="映画名" name="addmoviename" style="font-size: 20px; margin-right: 15px;"><br>
+          <input type="number" id="yearShown" value="" placeholder="公開年" name="addyearshown" style="font-size: 20px; width: 150px; margin-right: 15px;"><br><h1 style="font-size: 20px; padding-top: 10px; color: #333; margin-right: 5px;">観た日付:</h1>
+          <input type="date" id="yearSeen" value="" placeholder="見た年月日" name="addyearseen" style="font-size: 20px; width: 225px; margin-right: 15px;"><br><select name="addrating" style="font-size: 25px;">
+            <option value=""disabled selected>評価</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select><br>
+
+          <input type="submit" class="button" id="show" value="表示" style="font-size: 25px;">
+        </form>
+      </section>
+
+    </div>
+
+    <!--/contents-->
+
+    <footer>
+      <small>Copyright&copy; <a href="index.html">MitaZo</a> All Rights Reserved.</small>
+      <span class="pr"><a href="http://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+    </footer>
+
+    <p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
+
+  </div>
+  <!--/container-->
+
+</body>
+
+
+</html>

@@ -1,0 +1,50 @@
+html {
+  font-size: 20px;
+  overflow-y: scroll;
+  background-image: url("./images/zou.PNG");
+  background-size: 300px;
+  background-color:rgba(255,255,255,0.8);
+  background-blend-mode:lighten;
+}
+
+body {
+  width: 100%;
+  position: relative;
+}
+
+header{
+  font-family: Courier New;
+  display: flex;
+  justify-content: center;
+}
+
+header button{
+  position: fixed;
+  top:0;
+  right: 0;
+  margin: 2rem 2rem;
+}
+
+form{
+  text-align: center;
+}
+
+
+button{
+  font-weight: bold;
+  background-color: #248;
+  color: #fff;
+  margin: 0.5rem;
+}
+input,label{
+  margin: 0.5rem;
+}
+
+label{
+  font-size: 12px;
+}
+
+button:hover{
+  background-color: #24d;
+  color: #fff;
+}

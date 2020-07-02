@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+   <head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="register.css">
+   <title>MitaZo</title>
+ </head>
+ <body>
+   <header>
+   <h1>映画の登録</h1>
+ </header>
+  <form action="#" id="form1" name="name">
+      <input type="text" id="HN" value="" placeholder="HN"><br>
+	    <input type="text" id="moviename" value="" placeholder="映画名"><br>
+      <input type="number" id="yearShown" value="" placeholder="公開年"><br>
+      <input type="date" id="yearSeen" value="" placeholder="見た年月日"><br>
+      <label>レーティング（1-5）</label><select name ="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        </select><br>
+
+      <button type="button" onclick="onButtonClick()" value="送信">登録</button>
+  </form>
+
+
+ </body>
+</html>
