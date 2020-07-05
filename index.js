@@ -8,21 +8,21 @@ var movieresults;
 
 
 
-//MySQLに接続
+//Connect to MySQL
 var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
+  host: '******',
+  user: '****',
+  password: '******',
   database: 'nodelogin'
 });
 
 var app = express();
 
 
-app.use(express.static(__dirname)); //CSS適用させる
+app.use(express.static(__dirname)); //Apply CSS
 
 
-//よくわからない
+
 app.use(session({
   secret: 'secret',
   resave: true,
@@ -42,7 +42,7 @@ app.get('/', function (request, response) {
 var table = ''; //to store html table for search result
 
 
-//HNで検索
+//Search by name
 app.post('/search', function (request, response) {
   var handlename = request.body.handlename;
   if (handlename) {
@@ -75,7 +75,7 @@ app.post('/search', function (request, response) {
 });
 
 
-//新しい映画を追加
+//add a new movie in list
 app.post('/add', function (request, response) {
   //  var handlename = request.body.handlename;
   var addname = request.body.addname;
@@ -101,10 +101,9 @@ app.post('/add', function (request, response) {
 
 
 
-
+//show table of results
 app.get('/result', function (request, response) {
   if (request.session.loggedin) {
-    //    response.send('Welcome back, ' + request.session.username + '! <br> The movies you have seen are' + movieresults + "<br>" + table);
     response.send(table);
   } else {
     response.send('Please login to view this page!');
@@ -112,10 +111,9 @@ app.get('/result', function (request, response) {
   response.end();
 });
 
-
+//when adding a new movie works
 app.get('/success', function (request, response) {
   if (request.session.loggedin) {
-    //    response.send('Welcome back, ' + request.session.username + '! <br> The movies you have seen are' + movieresults + "<br>" + table);
     response.send(addmessage);
   } else {
     response.send('');
