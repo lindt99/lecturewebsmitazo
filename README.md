@@ -1,4 +1,4 @@
-# Web Service: Mitazo
+# Web Service: MitaZo
 Assignment to create a webservice in seminar
 ## Overview
 Create your personal movie history
