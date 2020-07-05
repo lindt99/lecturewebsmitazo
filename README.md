@@ -6,6 +6,13 @@ Create your personal movie history
 ## Explanation
 This website can store your name, name of the movie, year it was released, the date you watched and rating.
 
+## node.js
+Create a directory and install node.js,MySQL, Express, Express Session  
+Create a file name index.js
+
+run program with  
+node index.js
+
 ## MySQL Database Creation
 ### To create database  
 Create database nodelogin;
